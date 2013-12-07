@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D444C58D-4C12-46CE-89B0-D503D4731FCB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HPES</RootNamespace>
+    <AssemblyName>HPES</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>HPES.Program</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Hospital.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>FA6AC9D050D8CE0E5FD2871B92EAFADBAE54719E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>HPES_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignManifests>true</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>医院内涵建设指标量化考评管理系统</ProductName>
+    <PublisherName>中国人民解放军第四〇一医院</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Janus.Data.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.ButtonBar.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.Common.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.ExplorerBar.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.GridEX.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.Ribbon.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Janus.Windows.UI.v4, Version=4.0.40.0, Culture=neutral, PublicKeyToken=21d5517571b185bf" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBClass\DBconnection.cs" />
+    <Compile Include="DBClass\DBOperate.cs" />
+    <Compile Include="dsCiJunBi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCiJunBi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDrug.cs">
+      <DependentUpon>dsDrug.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDrug.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDrug.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEvalSummary.cs">
+      <DependentUpon>dsEvalSummary.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsEvalSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEvalSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsEvalSummaryOne.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEvalSummaryOne.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsHospital.cs">
+      <DependentUpon>dsHospital.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsHospital.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHospital.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsMaterial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMaterial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPoint.cs">
+      <DependentUpon>dsPoint.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsPoint.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPoint.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsQuery.cs">
+      <DependentUpon>dsQuery.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsQuery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsQuery.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsStandard.cs">
+      <DependentUpon>dsStandard.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsStandard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStandard.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSubmitData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSubmitData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsYear.cs">
+      <DependentUpon>dsYear.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsYear.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsYear.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmDrug.Designer.cs">
+      <DependentUpon>frmDrug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmDrugInuse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmDrugInuse.Designer.cs">
+      <DependentUpon>frmDrugInuse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmHospital.Designer.cs">
+      <DependentUpon>frmHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmMaterial.Designer.cs">
+      <DependentUpon>frmMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmSubmitData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmSubmitData.Designer.cs">
+      <DependentUpon>frmSubmitData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmSubmitDataModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmSubmitDataModel.Designer.cs">
+      <DependentUpon>frmSubmitDataModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Main\DA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Main\DA.Designer.cs">
+      <DependentUpon>DA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Main\OpenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Main\OpenDialog.Designer.cs">
+      <DependentUpon>OpenDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmPreview.Designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmChangePwd.designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmChangeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmChangeUser.designer.cs">
+      <DependentUpon>FrmChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Userview\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Userview\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmUserManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Userview\FrmUserManage.designer.cs">
+      <DependentUpon>FrmUserManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Main\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Main\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmSubjectEval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmSubjectEval.Designer.cs">
+      <DependentUpon>frmSubjectEval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmEvalSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmEvalSummary.Designer.cs">
+      <DependentUpon>frmEvalSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmYear.Designer.cs">
+      <DependentUpon>frmYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmInput.Designer.cs">
+      <DependentUpon>frmInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Main\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Main\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmObjectEval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Scoreview\frmObjectEval.Designer.cs">
+      <DependentUpon>frmObjectEval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsEvaluation.cs">
+      <DependentUpon>dsEvaluation.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsEvaluation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEvaluation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formview\Bookview\frmQuery.Designer.cs">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataSetToExcell.cs" />
+    <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\ExcelToSql.cs" />
+    <Compile Include="Model\ExportExcell.cs" />
+    <Compile Include="Model\Hospital.cs" />
+    <Compile Include="Model\Medicine.cs" />
+    <Compile Include="Model\Stdpoint.cs" />
+    <Compile Include="Model\StdTwo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formview\Bookview\frmDrug.resx">
+      <DependentUpon>frmDrug.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmDrugInuse.resx">
+      <DependentUpon>frmDrugInuse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmHospital.resx">
+      <DependentUpon>frmHospital.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmMaterial.resx">
+      <DependentUpon>frmMaterial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmSubmitData.resx">
+      <DependentUpon>frmSubmitData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmSubmitDataModel.resx">
+      <DependentUpon>frmSubmitDataModel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Main\DA.resx">
+      <DependentUpon>DA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Main\OpenDialog.resx">
+      <DependentUpon>OpenDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Scoreview\frmPreview.resx">
+      <DependentUpon>frmPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Userview\FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Userview\FrmChangeUser.resx">
+      <DependentUpon>FrmChangeUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Userview\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Userview\FrmUserManage.resx">
+      <DependentUpon>FrmUserManage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Main\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Scoreview\frmSubjectEval.resx">
+      <DependentUpon>frmSubjectEval.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Scoreview\frmEvalSummary.resx">
+      <DependentUpon>frmEvalSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmYear.resx">
+      <DependentUpon>frmYear.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Scoreview\frmInput.resx">
+      <DependentUpon>frmInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Main\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Scoreview\frmObjectEval.resx">
+      <DependentUpon>frmObjectEval.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formview\Bookview\frmQuery.resx">
+      <DependentUpon>frmQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptEvalSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEvalSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptEvalSummary.rdlc" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Report\rptEvalSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEvalSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dsEvalSummary.xsc">
+      <DependentUpon>dsEvalSummary.xsd</DependentUpon>
+    </None>
+    <None Include="dsEvalSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEvalSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsEvalSummary.xss">
+      <DependentUpon>dsEvalSummary.xsd</DependentUpon>
+    </None>
+    <None Include="dsHospital.xsc">
+      <DependentUpon>dsHospital.xsd</DependentUpon>
+    </None>
+    <None Include="dsHospital.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHospital.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsHospital.xss">
+      <DependentUpon>dsHospital.xsd</DependentUpon>
+    </None>
+    <None Include="dsStandard.xsc">
+      <DependentUpon>dsStandard.xsd</DependentUpon>
+    </None>
+    <None Include="dsStandard.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStandard.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsStandard.xss">
+      <DependentUpon>dsStandard.xsd</DependentUpon>
+    </None>
+    <None Include="dsEvaluation.xsc">
+      <DependentUpon>dsEvaluation.xsd</DependentUpon>
+    </None>
+    <None Include="dsEvaluation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEvaluation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsEvaluation.xss">
+      <DependentUpon>dsEvaluation.xsd</DependentUpon>
+    </None>
+    <None Include="dsYear.xsc">
+      <DependentUpon>dsYear.xsd</DependentUpon>
+    </None>
+    <None Include="dsYear.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsYear.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsYear.xss">
+      <DependentUpon>dsYear.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Hospital.ico" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\icons\add.png" />
+    <Content Include="images\icons\block.png" />
+    <Content Include="images\icons\database_upload.png" />
+    <Content Include="images\icons\delete.png" />
+    <Content Include="images\icons\download_database.png" />
+    <Content Include="images\icons\edit.png" />
+    <Content Include="images\icons\help.png" />
+    <Content Include="images\icons\home.png" />
+    <Content Include="images\icons\printer.png" />
+    <Content Include="images\icons\process.png" />
+    <Content Include="images\icons\refresh.png" />
+    <Content Include="images\icons\save.png" />
+    <Content Include="images\icons\search.png" />
+    <Content Include="images\icons\shut_down.png" />
+    <Content Include="images\icons\tools.png" />
+    <Content Include="images\icons\trash_can.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="Resources\background.jpg" />
+
+    <None Include="dsEvalSummaryOne.xsc">
+      <DependentUpon>dsEvalSummaryOne.xsd</DependentUpon>
+    </None>
+    <None Include="dsEvalSummaryOne.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEvalSummaryOne.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsEvalSummaryOne.xss">
+      <DependentUpon>dsEvalSummaryOne.xsd</DependentUpon>
+    </None>
+    <None Include="dsQuery.xsc">
+      <DependentUpon>dsQuery.xsd</DependentUpon>
+    </None>
+    <None Include="dsQuery.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsQuery.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsQuery.xss">
+      <DependentUpon>dsQuery.xsd</DependentUpon>
+    </None>
+    <None Include="HPES_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\clip.png" />
+    <None Include="Resources\zoom.png" />
+    <None Include="Resources\notebook.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\computer.png" />
+    <None Include="app.config" />
+    <None Include="dsCiJunBi.xsc">
+      <DependentUpon>dsCiJunBi.xsd</DependentUpon>
+    </None>
+    <None Include="dsCiJunBi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCiJunBi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsCiJunBi.xss">
+      <DependentUpon>dsCiJunBi.xsd</DependentUpon>
+    </None>
+    <None Include="dsDrug.xsc">
+      <DependentUpon>dsDrug.xsd</DependentUpon>
+    </None>
+    <None Include="dsDrug.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDrug.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDrug.xss">
+      <DependentUpon>dsDrug.xsd</DependentUpon>
+    </None>
+    <None Include="dsMaterial.xsc">
+      <DependentUpon>dsMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="dsMaterial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMaterial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsMaterial.xss">
+      <DependentUpon>dsMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="dsPoint.xsc">
+      <DependentUpon>dsPoint.xsd</DependentUpon>
+    </None>
+    <None Include="dsPoint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPoint.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPoint.xss">
+      <DependentUpon>dsPoint.xsd</DependentUpon>
+    </None>
+    <None Include="dsSubmitData.xsc">
+      <DependentUpon>dsSubmitData.xsd</DependentUpon>
+    </None>
+    <None Include="dsSubmitData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSubmitData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsSubmitData.xss">
+      <DependentUpon>dsSubmitData.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\calculator-48.png" />
+    <None Include="dsUser.xsc">
+      <DependentUpon>dsUser.xsd</DependentUpon>
+    </None>
+    <None Include="dsUser.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsUser.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsUser.xss">
+      <DependentUpon>dsUser.xsd</DependentUpon>
+    </None>
+    <None Include="images\icons\Thumbs.db" />
+    <None Include="Resources\kh.sql" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\全区医院内涵建设指标量化考评管理系统.doc" />
+    <None Include="Resources\考评标准.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

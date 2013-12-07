@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEvalSummary" targetNamespace="http://tempuri.org/dsEvalSummary.xsd" xmlns:mstns="http://tempuri.org/dsEvalSummary.xsd" xmlns="http://tempuri.org/dsEvalSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HPESConn" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HPESConn (Settings)" PropertyReference="ApplicationSettings.HPES.Properties.Settings.GlobalReference.Default.HPESConn" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dsEvalSummaryTableAdapter" GeneratorDataComponentClassName="dsEvalSummaryTableAdapter" Name="dsEvalSummary" UserDataComponentName="dsEvalSummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HPESConn (Settings)" DbObjectName="SELECT e.HID, h.HCODE, h.NAME, e.YID, t.Year, COUNT(e.ID) AS Count_ID, SUM(e.Score) AS Sum_Score, SUM(e.Score * p.Auto) AS Eval_Score FROM hpes_evaluation AS e INNER JOIN hpes_standard_point AS p ON e.PID = p.ID INNER JOIN hpes_time AS t ON e.YID = t.YID INNER JOIN hpes_hospital AS h ON e.HID = h.ID GROUP BY e.HID, e.YID, h.HCODE, h.NAME, t.Year" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     HID, HCODE, NAME, YID, Year, Count_ID, Sum_Score, Eval_Score, Sum_Score - Eval_Score AS Obj_Score
+FROM         (SELECT     e.HID, h.HCODE, h.NAME, e.YID, t.Year, COUNT(e.ID) AS Count_ID, SUM(e.Score) AS Sum_Score, SUM(e.Score * p.Auto) 
+                                              AS Eval_Score
+                       FROM          hpes_evaluation AS e INNER JOIN
+                                              hpes_standard_point AS p ON e.PID = p.ID INNER JOIN
+                                              hpes_time AS t ON e.YID = t.YID INNER JOIN
+                                              hpes_hospital AS h ON e.HID = h.ID
+                       GROUP BY e.HID, e.YID, h.HCODE, h.NAME, t.Year) AS derivedtbl_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HID" DataSetColumn="HID" />
+              <Mapping SourceColumn="HCODE" DataSetColumn="HCODE" />
+              <Mapping SourceColumn="NAME" DataSetColumn="NAME" />
+              <Mapping SourceColumn="YID" DataSetColumn="YID" />
+              <Mapping SourceColumn="Year" DataSetColumn="Year" />
+              <Mapping SourceColumn="Count_ID" DataSetColumn="Count_ID" />
+              <Mapping SourceColumn="Sum_Score" DataSetColumn="Sum_Score" />
+              <Mapping SourceColumn="Eval_Score" DataSetColumn="Eval_Score" />
+              <Mapping SourceColumn="Obj_Score" DataSetColumn="Obj_Score" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEvalSummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEvalSummary" msprop:Generator_DataSetName="dsEvalSummary" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsEvalSummary" msprop:Generator_UserTableName="dsEvalSummary" msprop:Generator_RowDeletedName="dsEvalSummaryRowDeleted" msprop:Generator_TableClassName="dsEvalSummaryDataTable" msprop:Generator_RowChangedName="dsEvalSummaryRowChanged" msprop:Generator_RowClassName="dsEvalSummaryRow" msprop:Generator_RowChangingName="dsEvalSummaryRowChanging" msprop:Generator_RowEvArgName="dsEvalSummaryRowChangeEvent" msprop:Generator_RowEvHandlerName="dsEvalSummaryRowChangeEventHandler" msprop:Generator_TablePropName="_dsEvalSummary" msprop:Generator_TableVarName="tabledsEvalSummary" msprop:Generator_RowDeletingName="dsEvalSummaryRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HID" msprop:Generator_UserColumnName="HID" msprop:Generator_ColumnPropNameInRow="HID" msprop:Generator_ColumnVarNameInTable="columnHID" msprop:Generator_ColumnPropNameInTable="HIDColumn" type="xs:int" />
+              <xs:element name="HCODE" msprop:Generator_UserColumnName="HCODE" msprop:Generator_ColumnPropNameInRow="HCODE" msprop:Generator_ColumnVarNameInTable="columnHCODE" msprop:Generator_ColumnPropNameInTable="HCODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAME" msprop:Generator_UserColumnName="NAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YID" msprop:Generator_UserColumnName="YID" msprop:Generator_ColumnPropNameInRow="YID" msprop:Generator_ColumnVarNameInTable="columnYID" msprop:Generator_ColumnPropNameInTable="YIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Count_ID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Count_ID" msprop:Generator_ColumnPropNameInRow="Count_ID" msprop:Generator_ColumnVarNameInTable="columnCount_ID" msprop:Generator_ColumnPropNameInTable="Count_IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Sum_Score" msprop:Generator_ColumnPropNameInRow="Sum_Score" msprop:Generator_ColumnVarNameInTable="columnSum_Score" msprop:Generator_ColumnPropNameInTable="Sum_ScoreColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Eval_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Eval_Score" msprop:Generator_ColumnPropNameInRow="Eval_Score" msprop:Generator_ColumnVarNameInTable="columnEval_Score" msprop:Generator_ColumnPropNameInTable="Eval_ScoreColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Obj_Score" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Obj_Score" msprop:Generator_ColumnPropNameInRow="Obj_Score" msprop:Generator_ColumnVarNameInTable="columnObj_Score" msprop:Generator_ColumnPropNameInTable="Obj_ScoreColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

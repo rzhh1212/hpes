@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsStandard" targetNamespace="http://tempuri.org/dsStandard.xsd" xmlns:mstns="http://tempuri.org/dsStandard.xsd" xmlns="http://tempuri.org/dsStandard.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HPESConn" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HPESConn (Settings)" PropertyReference="ApplicationSettings.HPES.Properties.Settings.GlobalReference.Default.HPESConn" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dsStandardTableAdapter" GeneratorDataComponentClassName="dsStandardTableAdapter" Name="dsStandard" UserDataComponentName="dsStandardTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HPESConn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT HPES_standard_point.ID AS 序号, HPES_standard_one.Name AS 一级指标, 
+      HPES_standard_one.Score AS 一级分值, HPES_standard_two.Name AS 二级指标, 
+      HPES_standard_two.Score AS 二级分值, 
+      HPES_standard_point.Name AS [考评要点（计算方法）], 
+      HPES_standard_point.Standard_Text AS 标准, HPES_standard_point.Score AS 分值, 
+      HPES_standard_point.Method AS 考评方法, 
+      HPES_standard_point.Reference AS 参考依据
+FROM HPES_standard_one INNER JOIN
+      HPES_standard_two ON 
+      HPES_standard_one.ID = HPES_standard_two.OID INNER JOIN
+      HPES_standard_point ON HPES_standard_two.ID = HPES_standard_point.TID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="一级指标" DataSetColumn="一级指标" />
+              <Mapping SourceColumn="二级指标" DataSetColumn="二级指标" />
+              <Mapping SourceColumn="考评要点（计算方法）" DataSetColumn="考评要点（计算方法）" />
+              <Mapping SourceColumn="标准" DataSetColumn="标准" />
+              <Mapping SourceColumn="考评方法" DataSetColumn="考评方法" />
+              <Mapping SourceColumn="参考依据" DataSetColumn="参考依据" />
+              <Mapping SourceColumn="序号" DataSetColumn="序号" />
+              <Mapping SourceColumn="一级分值" DataSetColumn="一级分值" />
+              <Mapping SourceColumn="二级分值" DataSetColumn="二级分值" />
+              <Mapping SourceColumn="分值" DataSetColumn="分值" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsStandard" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsStandard" msprop:Generator_DataSetName="dsStandard" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsStandard" msprop:Generator_UserTableName="dsStandard" msprop:Generator_RowDeletedName="dsStandardRowDeleted" msprop:Generator_RowChangedName="dsStandardRowChanged" msprop:Generator_RowClassName="dsStandardRow" msprop:Generator_RowChangingName="dsStandardRowChanging" msprop:Generator_RowEvArgName="dsStandardRowChangeEvent" msprop:Generator_RowEvHandlerName="dsStandardRowChangeEventHandler" msprop:Generator_TableClassName="dsStandardDataTable" msprop:Generator_TableVarName="tabledsStandard" msprop:Generator_RowDeletingName="dsStandardRowDeleting" msprop:Generator_TablePropName="_dsStandard">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="序号" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="序号" msprop:Generator_ColumnVarNameInTable="column序号" msprop:Generator_ColumnPropNameInRow="序号" msprop:Generator_ColumnPropNameInTable="序号Column" type="xs:int" />
+              <xs:element name="一级指标" msprop:Generator_UserColumnName="一级指标" msprop:Generator_ColumnVarNameInTable="column一级指标" msprop:Generator_ColumnPropNameInRow="一级指标" msprop:Generator_ColumnPropNameInTable="一级指标Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="一级分值" msprop:Generator_UserColumnName="一级分值" msprop:Generator_ColumnVarNameInTable="column一级分值" msprop:Generator_ColumnPropNameInRow="一级分值" msprop:Generator_ColumnPropNameInTable="一级分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="二级指标" msprop:Generator_UserColumnName="二级指标" msprop:Generator_ColumnVarNameInTable="column二级指标" msprop:Generator_ColumnPropNameInRow="二级指标" msprop:Generator_ColumnPropNameInTable="二级指标Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="二级分值" msprop:Generator_UserColumnName="二级分值" msprop:Generator_ColumnVarNameInTable="column二级分值" msprop:Generator_ColumnPropNameInRow="二级分值" msprop:Generator_ColumnPropNameInTable="二级分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="考评要点_xFF08_计算方法_xFF09_" msprop:Generator_UserColumnName="考评要点（计算方法）" msprop:Generator_ColumnVarNameInTable="_column考评要点_计算方法_" msprop:Generator_ColumnPropNameInRow="_考评要点_计算方法_" msprop:Generator_ColumnPropNameInTable="_考评要点_计算方法_Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="标准" msprop:Generator_UserColumnName="标准" msprop:Generator_ColumnVarNameInTable="column标准" msprop:Generator_ColumnPropNameInRow="标准" msprop:Generator_ColumnPropNameInTable="标准Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="分值" msprop:Generator_UserColumnName="分值" msprop:Generator_ColumnVarNameInTable="column分值" msprop:Generator_ColumnPropNameInRow="分值" msprop:Generator_ColumnPropNameInTable="分值Column" type="xs:int" minOccurs="0" />
+              <xs:element name="考评方法" msprop:Generator_UserColumnName="考评方法" msprop:Generator_ColumnVarNameInTable="column考评方法" msprop:Generator_ColumnPropNameInRow="考评方法" msprop:Generator_ColumnPropNameInTable="考评方法Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="参考依据" msprop:Generator_UserColumnName="参考依据" msprop:Generator_ColumnVarNameInTable="column参考依据" msprop:Generator_ColumnPropNameInRow="参考依据" msprop:Generator_ColumnPropNameInTable="参考依据Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint11" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dsStandard" />
+      <xs:field xpath="mstns:序号" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
